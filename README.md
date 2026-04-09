@@ -4,14 +4,11 @@ Custom skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),
 
 ## Skills
 
-### Research & Validation
+### Research
 
 | Skill | What it does |
 |-------|-------------|
 | **tech-research** | Research current state-of-the-art before implementing technical decisions. Prevents stale training-data recommendations for tooling, libraries, and architectural patterns. |
-| **validation-talk** | Generates interview questionnaires that produce go/kill signals. Mom Test + JTBD + Sean Ellis PMF — every question maps to an assumption with a kill threshold. |
-| **market-scan** | Broad competitive landscape research via web search. Produces a decision-ready report with sourced findings. |
-| **demand-scan** | Targeted demand validation — competitor deep-dives, user complaints, DIY workaround patterns. Complements market-scan's breadth with depth. |
 
 ### Session & Workflow
 
@@ -75,9 +72,7 @@ python skills/skill-creator/scripts/quick_validate.py skills/my-new-skill
 skills/
 ├── bouncer/               # Security audit for skills/plugins
 ├── consolidate/           # Post-session learning extraction
-├── demand-scan/           # Targeted demand validation
 ├── end-of-day/            # End-of-day work summary
-├── market-scan/           # Competitive landscape research
 ├── mastermind-session/    # Expert roundtable sessions
 ├── preclear/              # Pre-session-end checklist
 ├── prepush/               # Pre-push validation
@@ -86,7 +81,6 @@ skills/
 ├── spring-clean/          # Context budget optimizer
 ├── tech-research/         # State-of-the-art tech research
 ├── tech-to-social/        # Technical work → LinkedIn posts
-├── validation-talk/       # Interview questionnaire generator
 └── wait-what/             # Session checkpoint summaries
 ```
 
