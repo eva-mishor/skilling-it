@@ -4,11 +4,11 @@ Custom skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),
 
 ## Skills
 
-### Product & Validation
+### Research & Validation
 
 | Skill | What it does |
 |-------|-------------|
-| **idea-to-product** | Guided 6-phase process from raw idea to revenue-generating MVP. Socratic coaching with expert frameworks (Thiel, Ries, Hormozi, Ellis), phase gates, and deliverable templates. *Uses: validation-talk, market-scan, demand-scan.* |
+| **tech-research** | Research current state-of-the-art before implementing technical decisions. Prevents stale training-data recommendations for tooling, libraries, and architectural patterns. |
 | **validation-talk** | Generates interview questionnaires that produce go/kill signals. Mom Test + JTBD + Sean Ellis PMF — every question maps to an assumption with a kill threshold. |
 | **market-scan** | Broad competitive landscape research via web search. Produces a decision-ready report with sourced findings. |
 | **demand-scan** | Targeted demand validation — competitor deep-dives, user complaints, DIY workaround patterns. Complements market-scan's breadth with depth. |
@@ -20,7 +20,16 @@ Custom skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),
 | **mastermind-session** | Interactive roundtable with 5-10 thought leaders to solve business, strategic, or personal challenges. 5-phase structured process. |
 | **consolidate** | Post-session learning extraction. Scans conversation for insights and routes them to the correct persistent storage (memory, CLAUDE.md, rules). |
 | **wait-what** | Session checkpoint — structured summary of what was done, why, and what's next. Use before committing or when you lose track. |
+| **end-of-day** | Comprehensive end-of-day work summary with metrics and reflection. |
 | **tech-to-social** | Turn technical work (commits, PRs, bug fixes, architecture decisions) into LinkedIn posts. 2-3 draft variations per request with hook patterns, tone selection, and series planning. |
+
+### Dev Workflow Guards
+
+| Skill | What it does |
+|-------|-------------|
+| **preclear** | Pre-session-end checklist — ensures documentation, learning capture, and intelligent branch recommendations. |
+| **prepush** | Comprehensive validation before pushing to remote — ensures everything is tidy and documented. |
+| **repo-tidy-up** | Periodic repo health checklist — clean up branches, dependencies, stale code, memory, and docs. |
 
 ### Meta & Maintenance
 
@@ -37,20 +46,7 @@ Custom skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),
 claude install-skill https://github.com/eva-mishor/my-claude-skills/tree/main/skills/<skill-name>
 ```
 
-### idea-to-product (full toolkit)
-
-idea-to-product invokes 3 companion skills during its phases. Install all four for the complete experience:
-
-```bash
-claude install-skill https://github.com/eva-mishor/my-claude-skills/tree/main/skills/idea-to-product
-claude install-skill https://github.com/eva-mishor/my-claude-skills/tree/main/skills/validation-talk
-claude install-skill https://github.com/eva-mishor/my-claude-skills/tree/main/skills/market-scan
-claude install-skill https://github.com/eva-mishor/my-claude-skills/tree/main/skills/demand-scan
-```
-
-> idea-to-product works without the companion skills, but you'll miss the structured research and interview frameworks in Phases 2-3.
-
-### Other examples
+### Examples
 
 ```bash
 claude install-skill https://github.com/eva-mishor/my-claude-skills/tree/main/skills/bouncer
@@ -77,17 +73,21 @@ python skills/skill-creator/scripts/quick_validate.py skills/my-new-skill
 
 ```
 skills/
-├── idea-to-product/       # Idea-to-MVP coaching workflow
-├── validation-talk/       # Interview questionnaire generator
-├── market-scan/           # Competitive landscape research
-├── demand-scan/           # Targeted demand validation
-├── mastermind-session/    # Expert roundtable sessions
-├── consolidate/           # Post-session learning extraction
-├── wait-what/             # Session checkpoint summaries
-├── skill-creator/         # Skill creation guide + tools
-├── tech-to-social/        # Technical work → LinkedIn posts
 ├── bouncer/               # Security audit for skills/plugins
-└── spring-clean/          # Context budget optimizer
+├── consolidate/           # Post-session learning extraction
+├── demand-scan/           # Targeted demand validation
+├── end-of-day/            # End-of-day work summary
+├── market-scan/           # Competitive landscape research
+├── mastermind-session/    # Expert roundtable sessions
+├── preclear/              # Pre-session-end checklist
+├── prepush/               # Pre-push validation
+├── repo-tidy-up/          # Repo health & cleanup
+├── skill-creator/         # Skill creation guide + tools
+├── spring-clean/          # Context budget optimizer
+├── tech-research/         # State-of-the-art tech research
+├── tech-to-social/        # Technical work → LinkedIn posts
+├── validation-talk/       # Interview questionnaire generator
+└── wait-what/             # Session checkpoint summaries
 ```
 
 ## License
