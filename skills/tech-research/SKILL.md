@@ -22,7 +22,8 @@ Before recommending, check if the domain is fast-moving:
 
 ```
 Is this domain in references/fast-moving-domains.md?
-  YES -> Mandatory web research (Phase 2)
+  YES, marked ⚡ (highly volatile) -> Mandatory web research (Phase 2) + community search (Phase 2b)
+  YES, fast-moving                 -> Mandatory web research (Phase 2)
   NO  -> Check: Has this domain changed significantly since 2023?
          YES -> Web research recommended
          NO  -> Training data likely sufficient
@@ -33,9 +34,9 @@ Is this domain in references/fast-moving-domains.md?
 Execute searches with current year:
 
 ```
-Primary search:   "{topic} best practices 2025"
-Comparison:       "{tool A} vs {tool B} 2025"
-Migration check:  "{old tool} replacement 2025"
+Primary search:   "{topic} best practices {current_year}"
+Comparison:       "{tool A} vs {tool B} {current_year}"
+Migration check:  "{old tool} replacement {current_year}"
 ```
 
 **Minimum 2 searches required.** Look for:
@@ -43,6 +44,28 @@ Migration check:  "{old tool} replacement 2025"
 - Official documentation updates
 - GitHub stars/activity trends
 - Migration guides (signals tool replacement)
+
+### Phase 2b: Community Recency Search (Mandatory for Highly Volatile Domains)
+
+For domains marked as highly volatile in `references/fast-moving-domains.md` (currently: AI/ML Tooling, JS Build Tools, React Ecosystem), add **community searches**:
+
+```
+Reddit:    "{topic} reddit {current_year}"
+Reddit:    "{topic} site:reddit.com"
+HN:        "{topic} site:news.ycombinator.com"
+Sentiment: "{topic} production experience {current_year}"
+Migration: "switched from {tool} to reddit {current_year}"
+```
+
+**Minimum 2 community searches required.** Extract:
+- Practitioner sentiment (happy/frustrated/migrating away)
+- Production pain points not covered in docs or blogs
+- Emerging alternatives practitioners are actually switching to
+- "I switched from X to Y because..." migration stories
+
+**Recency caveat:** Web search tools cannot reliably enforce date-range filters (e.g., "last month"). Instead, manually check the date on each result you use. Discard community results older than 6 months for highly volatile domains. If results skew old, add the current quarter to your query (e.g., `"RAG framework reddit Q2 2026"`).
+
+**Why community sources matter:** Blog posts lag reality by 3-6 months. Reddit/HN surface real production experience, backlash, and emerging shifts before any blog covers them. A tool can look great in docs while practitioners are actively abandoning it.
 
 ### Phase 3: Validate Against Multiple Sources
 
@@ -54,6 +77,7 @@ Cross-reference findings:
 | GitHub repo | Last commit date, open issues, activity |
 | Dev blogs | Real-world adoption, pain points |
 | Stack Overflow | Common problems, community sentiment |
+| Reddit/HN (volatile domains) | Practitioner sentiment, migration stories, emerging alternatives, production pain points |
 
 **Red flags for outdated tools:**
 - "Deprecated" or "maintenance mode" mentions
@@ -108,31 +132,38 @@ If training data matches current SOTA, note: "Verified current - training data s
 
 ## Example Workflow
 
-**User**: "Set up Python linting for this project"
+**User**: "Which LLM framework for a RAG pipeline?"
 
-**Phase 1**: Python linting is in fast-moving-domains.md -> mandatory research
+**Phase 1**: LLM frameworks is in fast-moving-domains.md under AI/ML Tooling (highly volatile) -> mandatory research + community search
 
-**Phase 2**: Search "python linting best practices 2025", "ruff vs flake8 2025"
+**Phase 2**: Search "LLM RAG framework best practices 2026", "langchain vs llamaindex 2026"
 
-**Phase 3**: Find that ruff has largely replaced flake8+isort+black for many projects
+**Phase 2b**: Community search (highly volatile domain):
+- "RAG framework reddit 2026" -> find r/LocalLLaMA, r/LangChain threads
+- "langchain llamaindex site:news.ycombinator.com"
+- "switched from langchain to reddit 2026" -> migration stories
+- Discard any results older than 6 months
+
+**Phase 3**: Cross-reference official docs + GitHub activity + blogs + Reddit/HN sentiment
 
 **Phase 4**:
 ```markdown
 ## Research Summary
 
-**Question**: Python linting setup
+**Question**: LLM framework for RAG pipeline
 
-**My initial assumption**: flake8 + isort + black (traditional stack)
+**My initial assumption**: LangChain (default since 2023)
 
-**Current SOTA**: ruff (Rust-based, replaces flake8+isort, 10-100x faster)
+**Current SOTA**: Fragmented. LlamaIndex for retrieval, LangGraph for orchestration. Growing "just use the SDK" movement on Reddit/HN.
 
-**Delta**: ruff is now the dominant choice for new projects (2023-2024 shift)
+**Delta**: Significant. "Just use LangChain" is outdated. Community sentiment (Reddit, last month) shows frustration with abstraction layers — many practitioners going framework-minimal.
 
-**Recommendation**: Use ruff. Single tool, faster, drop-in compatible.
+**Recommendation**: Start with LlamaIndex for retrieval. Add LangGraph only if you need agentic orchestration. Consider raw SDK if your use case is simple.
 
 **Sources**:
-- https://docs.astral.sh/ruff/: Official docs, actively maintained
-- https://github.com/astral-sh/ruff: 35k+ stars, mass adoption
+- docs.llamaindex.ai: Official RAG-focused framework
+- r/LocalLLaMA (last month): Multiple threads on framework fatigue
+- HN discussion (last month): "Why I stopped using LangChain" post with 200+ comments
 ```
 
 ## Resources
