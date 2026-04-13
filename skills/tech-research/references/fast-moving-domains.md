@@ -1,5 +1,8 @@
 # Fast-Moving Technical Domains
 
+<!-- Last reviewed: 2026-04-12 -->
+<!-- This file drives the skill's volatility check. It's a list of things that change fast, so it goes stale fast. Review monthly. -->
+
 Domains where training data becomes stale quickly. Always verify via web search.
 
 ## Volatility Tiers

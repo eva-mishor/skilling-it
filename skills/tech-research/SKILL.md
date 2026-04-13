@@ -16,6 +16,25 @@ Research current SOTA before implementation to avoid stale recommendations.
 
 ## Research Workflow
 
+### Phase 0: Staleness Check (Self-Referential)
+
+Before using `references/fast-moving-domains.md`, verify it's fresh. The file drives the volatility check — if it's stale, the skill itself becomes stale.
+
+1. Read the `<!-- Last reviewed: YYYY-MM-DD -->` comment at the top of `references/fast-moving-domains.md`
+2. Compare to today's date
+3. If **more than 1 month old**, flag to the user BEFORE proceeding:
+
+```
+⚠️ fast-moving-domains.md was last reviewed {N} months ago ({date}).
+In fast-moving domains, that's stale. Want me to:
+  (a) Proceed anyway (acknowledge risk of missing new disruptors)
+  (b) Refresh the file first (quick audit of any new entrants or status changes)
+```
+
+4. If the user picks (b), run a brief audit: for each ⚡ highly volatile category, do one current-year web search to check for new tools or status changes. Update the file and the `Last reviewed` date. Then proceed.
+
+**Why this matters:** The file lists things that change fast. It goes stale the same way training data does. A 1-month threshold keeps it meaningful without becoming a nag.
+
 ### Phase 1: Identify Domain Volatility
 
 Before recommending, check if the domain is fast-moving:
