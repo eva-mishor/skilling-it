@@ -14,7 +14,6 @@ Custom skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),
 
 | Skill | What it does |
 |-------|-------------|
-| **mastermind-session** | Interactive roundtable with 5-10 thought leaders to solve business, strategic, or personal challenges. 5-phase structured process. |
 | **consolidate** | Post-session learning extraction. Scans conversation for insights and routes them to the correct persistent storage (memory, CLAUDE.md, rules). |
 | **wait-what** | Session checkpoint — structured summary of what was done, why, and what's next. Use before committing or when you lose track. |
 | **end-of-day** | Comprehensive end-of-day work summary with metrics and reflection. |
@@ -34,6 +33,7 @@ Custom skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),
 |-------|-------------|
 | **skill-creator** | Guide for creating new skills. 6-step process with progressive disclosure patterns and Python utilities for init/validate/package. |
 | **bouncer** | Security audit for vetting third-party skills, plugins, hooks, and MCP servers before installation. 4-phase process covering 8 threat categories. |
+| **eval-compare** | Controlled 4-condition comparison of a target skill vs no-skill baselines. Spawns parallel subagents, scores against a rubric, returns a comparison grid — empirically proves whether a skill helps. |
 | **spring-clean** | Audit and optimize Claude Code session context budget. Covers MCP servers, plugins, MEMORY.md, CLAUDE.md, custom agents. |
 
 ## Install a skill
@@ -73,7 +73,7 @@ skills/
 ├── bouncer/               # Security audit for skills/plugins
 ├── consolidate/           # Post-session learning extraction
 ├── end-of-day/            # End-of-day work summary
-├── mastermind-session/    # Expert roundtable sessions
+├── eval-compare/          # Controlled skill A/B comparison
 ├── preclear/              # Pre-session-end checklist
 ├── prepush/               # Pre-push validation
 ├── repo-tidy-up/          # Repo health & cleanup
