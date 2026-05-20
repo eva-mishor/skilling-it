@@ -39,4 +39,4 @@ Source: usage telemetry on file Jan – Apr 2026 + cumulative code across 11 rep
 
 ### Companion talk
 
-**Vibe Coding from Scratch — Lessons Learnt** — *Intelligence at Work*, Women in Data Science Israel (WiDS-IL), Nov 2025. [event](https://luma.com/tsuna6vb)
+**Vibe Coding from Scratch — Lessons Learnt** — *Intelligence at Work*, Nov 2025. [event](https://luma.com/tsuna6vb)

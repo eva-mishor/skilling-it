@@ -13,7 +13,7 @@ allowed-tools: Task, Read, Write, Bash
 
 # eval-compare — controlled comparison of any skill
 
-> **Note — this is a talk-demo artifact, not a real eval.** A single 4-condition run produces an anecdote, not a measurement: no repeats means no statistical power, no confidence intervals, no defensible claim about whether the skill helps. For serious skill evaluation use Claude Code's built-in `--evals` flag and a SkillsBench-style harness that runs each condition many times and reports distributions. This skill is kept here as the worked example from the Nov 2025 WiDS-IL ("Vibe Coding from Scratch") talk — it's useful for *illustrating the four-condition design pattern* in a workshop or demo, not for evaluating production skills.
+> **Note — this is a talk-demo artifact, not a real eval.** A single 4-condition run produces an anecdote, not a measurement: no repeats means no statistical power, no confidence intervals, no defensible claim about whether the skill helps. For serious skill evaluation use Claude Code's built-in `--evals` flag and a SkillsBench-style harness that runs each condition many times and reports distributions. This skill is kept here as the worked example from the Nov 2025 "Vibe Coding from Scratch" talk — it's useful for *illustrating the four-condition design pattern* in a workshop or demo, not for evaluating production skills.
 
 ## What this skill does
 

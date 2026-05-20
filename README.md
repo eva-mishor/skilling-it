@@ -27,7 +27,7 @@ These skills are not theory. They come from real daily use:
 Selected, most relevant to this repo:
 
 - **SKilling it! — Don't build agents. Build skills.** — AI & Vibe Coding Bootcamp for Builders (FUSION × Google for Startups × Ottomat), Tel Aviv, Apr 2026. [→ slides + notes](docs/talks/) · [→ deck PDF](docs/talks/skilling-it-fusion-2026.pdf)
-- **Vibe Coding from Scratch — Lessons Learnt** — *Intelligence at Work*, Women in Data Science Israel (WiDS-IL), Nov 2025. [event](https://luma.com/tsuna6vb)
+- **Vibe Coding from Scratch — Lessons Learnt** — *Intelligence at Work*, Nov 2025. [event](https://luma.com/tsuna6vb)
 
 ---
 
@@ -76,7 +76,7 @@ If you only look at one skill in this repo, look at this one.
 | **skill-creator** | Guide for creating new skills. 6-step process with progressive disclosure patterns and Python utilities for init/validate/package. |
 | **bouncer** | Security audit for vetting third-party skills, plugins, hooks, and MCP servers before installation. 4-phase process covering 8 threat categories with CVE-informed attack patterns. |
 | **spring-clean** | Context-budget engineering for long agent sessions. Harness-agnostic (Claude Code · Codex CLI · Gemini CLI · opencode). Measures baseline startup consumption, then audits the four context-eaters — MCP servers, plugins, persistent memory, project instructions, subagents — and applies fixes in order of token impact. Target: <25% of budget consumed at session start. Turns "why is this session sluggish" into a defensible cleanup PR. |
-| **eval-compare** | Talk demo: a 4-condition one-shot comparison harness for skills (Opus/Sonnet × skill-on/off). No repeats, so not a real eval — for serious skill evaluation use Claude Code's `--evals` flag and the SkillsBench infrastructure. Kept here as the worked example from my Nov 2025 WiDS-IL talk. |
+| **eval-compare** | Talk demo: a 4-condition one-shot comparison harness for skills (Opus/Sonnet × skill-on/off). No repeats, so not a real eval — for serious skill evaluation use Claude Code's `--evals` flag and the SkillsBench infrastructure. Kept here as the worked example from my Nov 2025 Vibe Coding talk. |
 
 ---
 
