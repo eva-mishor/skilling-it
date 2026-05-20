@@ -1,1 +1,8 @@
-docs/
+docs/*
+!docs/talks/
+
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+*.swp

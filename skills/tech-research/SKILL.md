@@ -45,8 +45,18 @@ Is this domain in references/fast-moving-domains.md?
   YES, fast-moving                 -> Mandatory web research (Phase 2)
   NO  -> Check: Has this domain changed significantly since 2023?
          YES -> Web research recommended
-         NO  -> Training data likely sufficient
+         NO  -> Training data likely sufficient (acknowledge explicitly, see Phase 1.5)
 ```
+
+### Phase 1.5: Slow-Domain Exit Disclosure (Mandatory)
+
+If Phase 1 routes to "Training data likely sufficient" and you skip web research, you MUST prepend this disclosure block to your response:
+
+> ⓘ **Answering from training data only.** I assessed **{domain}** as slow-moving — not in the volatility list, and I don't see significant change since 2023. **If you suspect a recent advancement (new tool, standard, or library release in the last 12 months), reply with `override and search` and I'll re-run with web research.**
+
+This converts a silent miss into an acknowledged limitation. The skill cannot detect disruption in classically-stable fields (cryptography, embedded DBs, OS primitives, compression, sorting) because Phase 1's "changed since 2023" check is asked of the same training data that's being graded. The disclosure puts the user in the loop. Do NOT skip it — without it, a slow-domain misclassification produces a confident-but-stale answer with no signal to the user.
+
+If the user replies `override and search`, restart at Phase 2 with mandatory web research.
 
 ### Phase 2: Web Search (Mandatory for Fast-Moving Domains)
 
@@ -149,45 +159,8 @@ If training data matches current SOTA, note: "Verified current - training data s
 - pip/poetry/pipenv → **uv** (stable)
 - mypy/pyright → **ty** (beta, watch for stable)
 
-## Example Workflow
-
-**User**: "Which LLM framework for a RAG pipeline?"
-
-**Phase 1**: LLM frameworks is in fast-moving-domains.md under AI/ML Tooling (highly volatile) -> mandatory research + community search
-
-**Phase 2**: Search "LLM RAG framework best practices 2026", "langchain vs llamaindex 2026"
-
-**Phase 2b**: Community search (highly volatile domain):
-- "RAG framework reddit 2026" -> find r/LocalLLaMA, r/LangChain threads
-- "langchain llamaindex site:news.ycombinator.com"
-- "switched from langchain to reddit 2026" -> migration stories
-- Discard any results older than 6 months
-
-**Phase 3**: Cross-reference official docs + GitHub activity + blogs + Reddit/HN sentiment
-
-**Phase 4**:
-```markdown
-## Research Summary
-
-**Question**: LLM framework for RAG pipeline
-
-**My initial assumption**: LangChain (default since 2023)
-
-**Current SOTA**: Fragmented. LlamaIndex for retrieval, LangGraph for orchestration. Growing "just use the SDK" movement on Reddit/HN.
-
-**Delta**: Significant. "Just use LangChain" is outdated. Community sentiment (Reddit, last month) shows frustration with abstraction layers — many practitioners going framework-minimal.
-
-**Recommendation**: Start with LlamaIndex for retrieval. Add LangGraph only if you need agentic orchestration. Consider raw SDK if your use case is simple.
-
-**Sources**:
-- docs.llamaindex.ai: Official RAG-focused framework
-- r/LocalLLaMA (last month): Multiple threads on framework fatigue
-- HN discussion (last month): "Why I stopped using LangChain" post with 200+ comments
-```
-
 ## Resources
 
-See [references/fast-moving-domains.md](references/fast-moving-domains.md) for:
-- List of domains requiring mandatory research
-- Pre-built search queries by category
-- Domain-specific volatility indicators
+- **[references/fast-moving-domains.md](references/fast-moving-domains.md)** — domain volatility tiers, pre-built search queries, key disruptors. Loaded by Phase 0 and Phase 1.
+- **[references/gotchas.md](references/gotchas.md)** — known failure modes and edge cases. Load when skill behavior surprises you, when debugging a stale recommendation, or during the monthly audit.
+- **[references/example-workflow.md](references/example-workflow.md)** — worked example showing Phases 1–4 end-to-end on a highly-volatile domain query. Load if you need to see the procedure run in full.

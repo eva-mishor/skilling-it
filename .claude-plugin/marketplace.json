@@ -1,39 +1,29 @@
 {
-  "name": "my-claude-skills",
-  "displayName": "My Claude Skills",
-  "description": "Custom repository for personal Claude Code skills",
-  "author": "user",
-  "version": "1.0.0",
+  "name": "skilling-it",
+  "displayName": "Claude Skills by Eva Mishor",
+  "description": "Production-tested skills for Claude Code: controlled skill evaluation, security auditing, structured research, session checkpointing, and pre-flight discipline.",
+  "author": "Eva Mishor <eva.mishor@gmail.com>",
+  "homepage": "https://github.com/eva-mishor/skilling-it",
+  "version": "1.1.0",
   "pluginGroups": [
     {
-      "id": "my-custom-skills",
-      "name": "My Custom Skills",
-      "description": "Personal collection of Claude Code skills",
+      "id": "research",
+      "name": "Research",
+      "description": "Skills for keeping technical decisions current and well-informed",
       "plugins": [
         {
-          "id": "skill-creator",
-          "name": "Skill Creator",
-          "description": "Guide for creating effective skills",
-          "skills": ["skill-creator"]
-        },
-        {
-          "id": "mastermind-session",
-          "name": "Mastermind Session",
-          "description": "Interactive mastermind session with thought leaders to solve challenges",
-          "skills": ["mastermind-session"]
-        },
-        {
-          "id": "bouncer",
-          "name": "Bouncer",
-          "description": "Security audit workflow for vetting skills, plugins, hooks, and MCP servers before installation",
-          "skills": ["bouncer"]
-        },
-        {
-          "id": "spring-clean",
-          "name": "Spring Clean",
-          "description": "Audit and optimize Claude Code session context budget",
-          "skills": ["spring-clean"]
-        },
+          "id": "tech-research",
+          "name": "Tech Research",
+          "description": "Research current state-of-the-art before implementing technical decisions. Prevents stale training-data recommendations.",
+          "skills": ["tech-research"]
+        }
+      ]
+    },
+    {
+      "id": "session-and-workflow",
+      "name": "Session & Workflow",
+      "description": "Skills for managing long sessions and capturing learnings",
+      "plugins": [
         {
           "id": "consolidate",
           "name": "Consolidate",
@@ -41,28 +31,84 @@
           "skills": ["consolidate"]
         },
         {
-          "id": "idea-to-product",
-          "name": "Idea to Product",
-          "description": "Guided process for moving a B2C app idea from concept to revenue-generating MVP",
-          "skills": ["idea-to-product"]
+          "id": "wait-what",
+          "name": "Wait, What?",
+          "description": "Session checkpoint — structured summary of what was done, why, and what's next",
+          "skills": ["wait-what"]
         },
         {
-          "id": "market-scan",
-          "name": "Market Scan",
-          "description": "Structured competitive landscape and market research using web search",
-          "skills": ["market-scan"]
+          "id": "end-of-day",
+          "name": "End of Day",
+          "description": "End-of-day work summary with metrics and reflection",
+          "skills": ["end-of-day"]
         },
         {
-          "id": "demand-scan",
-          "name": "Demand Scan",
-          "description": "Targeted demand validation — competitor deep-dives, user complaints, DIY workaround hunting",
-          "skills": ["demand-scan"]
+          "id": "tech-to-social",
+          "name": "Tech to Social",
+          "description": "Turn technical work into LinkedIn posts with hook patterns, tone selection, and series planning",
+          "skills": ["tech-to-social"]
+        }
+      ]
+    },
+    {
+      "id": "dev-workflow-guards",
+      "name": "Dev Workflow Guards",
+      "description": "Pre-flight discipline before key transitions",
+      "plugins": [
+        {
+          "id": "pr-axes-review",
+          "name": "PR Axes Review",
+          "description": "14-axis ship-time review fired after `gh pr create`. Tier by surprise risk, not severity. Diff-anchored, chat-only.",
+          "skills": ["pr-axes-review"]
         },
         {
-          "id": "validation-talk",
-          "name": "Validation Talk",
-          "description": "Generate Mom Test-compliant interview questionnaires for assumption validation",
-          "skills": ["validation-talk"]
+          "id": "preclear",
+          "name": "Pre-Clear",
+          "description": "Pre-session-end checklist — documentation, learning capture, intelligent branch recommendations",
+          "skills": ["preclear"]
+        },
+        {
+          "id": "prepush",
+          "name": "Pre-Push",
+          "description": "Comprehensive validation before pushing to remote",
+          "skills": ["prepush"]
+        },
+        {
+          "id": "repo-tidy-up",
+          "name": "Repo Tidy-Up",
+          "description": "Periodic repo health checklist — branches, dependencies, stale code, memory, docs",
+          "skills": ["repo-tidy-up"]
+        }
+      ]
+    },
+    {
+      "id": "meta-and-maintenance",
+      "name": "Meta & Maintenance",
+      "description": "Skills about building, evaluating, and securing other skills",
+      "plugins": [
+        {
+          "id": "skill-creator",
+          "name": "Skill Creator",
+          "description": "Guide for creating effective skills with progressive disclosure",
+          "skills": ["skill-creator"]
+        },
+        {
+          "id": "bouncer",
+          "name": "Bouncer",
+          "description": "Security audit for vetting skills, plugins, hooks, and MCP servers before installation",
+          "skills": ["bouncer"]
+        },
+        {
+          "id": "spring-clean",
+          "name": "Spring Clean",
+          "description": "Harness-agnostic context-budget audit for agent sessions. Works for Claude Code, Codex CLI, Gemini CLI, opencode.",
+          "skills": ["spring-clean"]
+        },
+        {
+          "id": "eval-compare",
+          "name": "Eval Compare (talk demo)",
+          "description": "Talk-demo A/B harness for skills. No repeats — not a real eval. Use Claude Code's `--evals` flag for serious skill evaluation. Kept as the worked example from the Nov 2025 WiDS-IL talk.",
+          "skills": ["eval-compare"]
         }
       ]
     }
