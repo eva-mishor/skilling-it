@@ -138,4 +138,4 @@ MIT — see [LICENSE](LICENSE). Individual skills may carry additional notices; 
 ## About
 
 Eva Mishor, Ph.D. — senior data scientist & AI engineer.
-[LinkedIn](https://www.linkedin.com/in/eva-mishor) · [GitHub](https://github.com/eva-mishor) · eva.mishor@gmail.com
+[LinkedIn](https://www.linkedin.com/in/eva-mishor) · [GitHub](https://github.com/eva-mishor)

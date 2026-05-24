@@ -2,7 +2,7 @@
   "name": "skilling-it",
   "displayName": "Claude Skills by Eva Mishor",
   "description": "Production-tested skills for Claude Code: controlled skill evaluation, security auditing, structured research, session checkpointing, and pre-flight discipline.",
-  "author": "Eva Mishor <eva.mishor@gmail.com>",
+  "author": "Eva Mishor",
   "homepage": "https://github.com/eva-mishor/skilling-it",
   "version": "1.1.0",
   "pluginGroups": [
