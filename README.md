@@ -1,4 +1,4 @@
-# Claude Skills by Eva Mishor
+# Skills by Eva Mishor
 
 > Neuroscience ↔ Data science ↔ Building with coding agents daily
 
