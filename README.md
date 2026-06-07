@@ -2,7 +2,7 @@
 
 > Neuroscience ↔ Data science ↔ Building with coding agents daily
 
-Production-tested skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — patterns I use daily across consulting, research, and shipping AI products. Open-source so you can install them, fork them, or learn from them.
+Production-tested skills for coding agents. Patterns I use daily across consulting, research, and shipping AI products. Open-source so you can install them, fork them, or learn from them.
 
 These skills started as friction points I kept hitting while building agent systems — they encode the workflow I now run.
 
